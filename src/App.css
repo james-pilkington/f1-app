@@ -1,38 +1,132 @@
-.App {
+/* Reset default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
   text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #007bff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Grid Layout */
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Selector Section */
+.selectors {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }
 
-.App-link {
-  color: #61dafb;
+.selectors label {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-right: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.selectors select {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Results and Highlights Section */
+.results, .highlights {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.results h2, .highlights h2 {
+  font-size: 1.8rem;
+  color: #007bff;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.results ul, .highlights p {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Additional Sections for Races, Driver Standings, and Constructor Standings */
+.additional-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.additional-sections div {
+  background-color: #e6f7ff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.additional-sections h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.additional-sections ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.additional-sections ul li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.additional-sections ul li:last-child {
+  border-bottom: none;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .dashboard {
+      grid-template-columns: 2fr 1fr 1fr;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (min-width: 1024px) {
+  .dashboard {
+      grid-template-columns: 1fr 1fr 1fr;
   }
 }

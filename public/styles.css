@@ -1,0 +1,211 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Formula 1 uses a clean, modern font */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #121212; /* Dark background, similar to F1 site */
+    color: #e0e0e0; /* Light text for contrast */
+    line-height: 1.6; /* Improved readability */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-rows: 0.25fr auto auto auto;
+    gap: 15px; /* Slightly increased gap for better spacing */
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto; /* Allow the entire container to scroll if content overflows */
+}
+
+h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    background-color: #444444; /* Dark gray background */
+    padding: 20px;
+    margin: 0;
+    font-size: 28px; /* Slightly larger font for a bolder header */
+    color: #ffffff; /* White text */
+    text-transform: uppercase; /* Uppercase text for a bold effect */
+    letter-spacing: 1.5px; /* Adds a bit of spacing between letters */
+}
+
+#yearselect, #results, #highlights, #racelist, #driverstandingSection, #constructorstandingSection, #currentStanding, #raceControl {
+    background-color: #1e1e1e; /* Darker background for sections */
+    padding: 20px;
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+#results h2, #highlights h2, #racelist h3, #driverstandingSection h3, #constructorstandingSection h3 {
+    color: #ff1e00; /* Red accent color to match F1 branding */
+    margin-bottom: 10px;
+    font-size: 22px; /* Slightly larger section headers */
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Adds a bit of spacing between letters */
+}
+
+select, ul, p {
+    background-color: #2a2a2a; /* Darker background for inputs */
+    color: #e0e0e0;
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 14px; /* Standardized font size for better readability */
+}
+
+select:focus, input:focus, textarea:focus {
+    outline: none;
+    border: 1px solid #ff1e00; /* Red border on focus */
+}
+
+ul {
+    list-style-type: none; /* Remove bullets from lists */
+    padding: 0;
+    margin: 0; /* Remove default margin for better alignment */
+}
+
+li {
+    padding: 2px 0; /* Increased padding for better spacing */
+    border-bottom: 1px solid #444444; /* Light separator between items */
+    display: flex; /* Flexbox for better alignment of content */
+    justify-content: space-between; /* Distribute space evenly between columns */
+}
+
+a {
+    color: #ff1e00; /* Red links to match F1 branding */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover for better UX */
+}
+
+#yearselect {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+#results {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+#highlights {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+}
+
+#racelist {
+    grid-column: 2 / 3;
+    grid-row: 2 / 5;
+    overflow-y: auto;
+}
+
+#driverstandingSection {
+    grid-column: 3 / 4;
+    grid-row: 2 / 5;
+    overflow-y: auto;
+}
+
+#constructorstandingSection {
+    grid-column: 4 / 5;
+    grid-row: 2 / 5;
+    overflow-y: auto;
+}
+
+#liveRace {
+    grid-column: 1 / -1;
+    padding: 5px;
+    margin-top: 5px; /* Adjust spacing between sections */
+    background-color: #1e1e1e; /* Matching background */
+    border-radius: 8px; /* Matching rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Matching subtle shadow */
+}
+
+#raceControl {
+    grid-column: 2 / 5;
+    overflow-y: auto;
+}
+
+#liveRace h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    /*background-color: #444444; /* Dark gray background */
+    background-color: #e0e0e0;
+    padding: 10px;
+    margin: 0;
+    font-size: 28px; /* Slightly larger font for a bolder header */
+    color: #ffffff; /* White text */
+    text-transform: uppercase; /* Uppercase text for a bold effect */
+    letter-spacing: 1.5px; /* Adds a bit of spacing between letters */
+}
+
+#liveRace > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    grid-template-rows: auto auto auto;
+    gap: 20px; /* Space between columns */
+    overflow-y: auto;
+}
+
+#currentStanding, #raceControl {
+    background-color: #1e1e1e; /* Matching background */
+    padding: 20px;
+    border-radius: 8px; /* Matching rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Matching subtle shadow */
+}
+
+#currentStanding h3, #raceControl h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ff1e00; /* Red accent for consistency */
+    text-transform: uppercase; /* Uppercase for consistency */
+    letter-spacing: 1px; /* Adds a bit of spacing between letters */
+}
+
+.highlight {
+    background-color: red; /* Highlighted item background */
+    font-style: italic;
+}
+
+/* Style for the list items */
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+/* Style for the position and driver/constructor info */
+.result-info {
+    flex: 1;
+}
+
+/* Style for the points */
+.result-points {
+    flex: 0 0 100px;
+    text-align: right;
+}
+
+/* Initially hide items after the top 10 */
+.hidden {
+    display: none;
+}
+
+/* Style for the expand/collapse button */
+.toggle-button {
+    display: block;
+    margin: 15px auto; /* Adjusted margin for better spacing */
+    padding: 8px 15px; /* Slightly larger padding for a more prominent button */
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Slightly larger font size */
+}
+
+.toggle-button:hover {
+    background-color: #0056b3;
+}
